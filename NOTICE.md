@@ -20,7 +20,9 @@
 - `assets/lowbudget.zip`：本项目自己的皮肤包 + 合并字体 + 字体许可证；
 - `assets/jre25-android-arm64.tar.xz`：OpenJDK 25（Android arm64 构建），**原样分发**，
   附 GPLv2 + Classpath Exception 许可证（见 `third_party/jre25/` 与 APK 内 `assets/licenses/`）；
-- `assets/StarlingVisuals.zip`、`assets/prepare-kit.zip`、`classes.dex`、`res/`：上游 MIT 内容。
+- `assets/StarlingVisuals.zip`、`assets/prepare-kit.zip`、`classes.dex`、`res/`：上游 MIT 内容；
+- `assets/licenses/`：MIT 许可证全文（`LICENSE-MIT.txt`）、上游第三方声明（`THIRD_PARTY_NOTICES.md`）、
+  本文件（`NOTICE.md`）以及 OpenJDK 的 GPLv2 + Classpath Exception。
 
 ## APK 里特意没有的东西
 

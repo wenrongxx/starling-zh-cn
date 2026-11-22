@@ -1,12 +1,22 @@
 # 版本记录
 
+## v0.9.0-zh-cn.4（当前）
+
+- 把 **MIT 许可证全文、上游第三方声明、发行合规说明**放进 APK（`assets/licenses/`），
+  满足 MIT “随副本分发声明”的要求；功能与 v3 相同。
+- 体积 222.8 MiB。
+
+## v0.9.0-zh-cn.3（已下架）
+
+- 保留内置 JRE 并补 JRE 许可证；APK 内当时缺 MIT 许可证，改用 v4。
+
 ## 文档更新（2026-11-22）
 
 - `LICENSE` 增列汉化部分版权行（上游 MIT 保留）。
 - `README` 增加独立的「许可证」段落：整体 MIT、汉化部分的授权、非 MIT 组件表、非官方声明。
 - `NOTICE.md` 增加许可证总览表；把“仅供学习交流”改为明确的授权表述。
 
-## v0.9.0-zh-cn.3（当前）
+## v0.9.0-zh-cn.3（历史）
 
 - **保留内置 Java 运行时**（国内下载太慢），但补齐合规：APK 内 `assets/licenses/` 与仓库
   `third_party/jre25/` 附 GPLv2、Classpath Exception、Additional License Info 以及来源/源码地址。
