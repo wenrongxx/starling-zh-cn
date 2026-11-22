@@ -20,7 +20,9 @@
 | 中文渲染 | 字体替换为 Noto Sans SC 合并字体；图集字形区域扩容，修掉“切出去再回来整片缺字” |
 | 语言设置 | 默认语言真正存成 `zh_cn`，语言列表不会再出现“界面中文、选中 English” |
 
-完整改动见 [CHANGES.md](CHANGES.md)；每轮的来龙去脉见 [docs/ENGINEERING_LOG.md](docs/ENGINEERING_LOG.md)。
+完整改动见 [CHANGES.md](CHANGES.md)；每轮的来龙去脉见 [docs/ENGINEERING_LOG.md](docs/ENGINEERING_LOG.md)；
+发行合规说明（不含哪些 Mojang 资源、字体许可、语言文件来源）见 [NOTICE.md](NOTICE.md)。
+正版登录的实现思路见 [docs/LOGIN.md](docs/LOGIN.md)。
 
 ## 仓库内容
 
@@ -33,6 +35,10 @@ scripts/build_zh_mac.sh      macOS 上交叉编译 libhorizon_android.so
 docs/HANDOVER.md             构建、装机、调试的完整说明
 docs/ENGINEERING_LOG.md      每轮改了什么、怎么验证、遗留问题
 docs/HANDOVER_PROMPT.md      继续这个项目时的速查
+docs/LOGIN.md                微软正版登录的排查与修复思路
+NOTICE.md                    发行合规说明（不含 Mojang 资源、字体许可、语言文件来源）
+CHANGELOG.md                 版本记录
+fonts/OFL.txt                Noto Sans SC / Geist 的 SIL OFL 1.1 许可证
 THIRD_PARTY_NOTICES.md       上游的第三方声明（原样保留）
 ```
 
