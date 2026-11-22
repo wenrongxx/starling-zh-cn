@@ -330,3 +330,28 @@
 
 - 这台模拟器上 **adb 的合成触摸事件进不到游戏窗口**（启动器界面能点，游戏内点不动），
   所以控制页/语言页没法现场截图复核；改动是确定性的（中文直接写在源码里）。
+
+
+---
+
+## R14 / R15 · 2026-11-22 深夜（发布与合规）
+
+- 发布到 GitHub：`wenrongxx/starling-zh-cn`（MIT，公开）。
+- R14：移除 APK 内 Mojang 资源（bedrock-controls.zip）与内置 JRE；因为首次启动要下载 36 MB 的
+  JRE 太慢，没有作为正式版。
+- R15（正式）：保留内置 JRE，补 `assets/licenses/`（GPLv2、Classpath Exception、
+  Additional License Info、来源与源码地址）；不打包任何 Mojang 资源；字体 OFL 随包。
+  产物 `starling-0.9.0-arm64-v8a-zh-cn-built-r15.apk`（222.7 MiB），
+  Release `v0.9.0-zh-cn.3`；v0.9.0-zh-cn.1/.2 已下架，本地存档在 `apk_archive/`。
+
+
+---
+
+## 验收 · 2026-11-22 深夜
+
+- 用户在一加/HyperOS 真机与 Mac 模拟器上测试 r15（Release `v0.9.0-zh-cn.3`）：
+  **未发现大问题**。
+- 已验收：启动器各页中文、简洁版设置（控制/音乐/辅助功能）中文、默认语言为简体中文、
+  微软正版登录（设备码自动填入、登录后无 `invalid_request`）、切出去再回来不缺字。
+- Release 资产：`starling-0.9.0-arm64-v8a-zh-cn-built-r15.apk`
+  （SHA-256 `066ee10e…f6a522`），含 Mojang 资源排除说明与 JRE/字体许可证。
