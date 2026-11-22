@@ -13,7 +13,7 @@
 - ✅ **只做启动器**（Launcher）—— 侧边栏、设置子页面、皮肤/披风、控件编辑器、Starling Control Hub、设置向导、下载页、钓鱼小游戏
 - ❌ **游戏内 Minecraft 的文案不用管**（标题屏、暂停菜单、原版选项等）
 
-**测试环境**：用户手机 HyperOS 4（Android 17）；开发机 Windows（本工作区）+ macOS（<build-host-ip>，编译用）+ Android 模拟器（在 Mac 上）。
+**测试环境**：用户的小米手机（HyperOS 4，Android 17）；开发机 Windows（本工作区）+ macOS（<build-host-ip>，编译用）+ Android 模拟器（在 Mac 上）。
 
 ---
 
