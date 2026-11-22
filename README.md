@@ -60,10 +60,26 @@ THIRD_PARTY_NOTICES.md       上游的第三方声明（原样保留）
 - “Horizon 设置”页的页面说明已改为只显示在底部说明条（之前会浮在按钮上）。
 - 微软登录依赖微软自家客户端 id `00000000402b5328`；若微软调整旧版设备码流程，登录可能需要再适配。
 
-## 许可
+## 许可证
 
-代码与文档沿用上游 **MIT**（见 [LICENSE](LICENSE)）；第三方组件见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
-字体（Noto Sans SC）为 SIL Open Font License 1.1，来自 Google Fonts。
+**本项目整体以 MIT 许可证分发**，全文见 [LICENSE](LICENSE)。
+
+- 上游 Starling / Horizon 代码：版权归 Ludovic Marie 与 Horizon 贡献者，MIT；
+- 简体中文汉化层（`i18n/`、`packaging/` 下的语言文件）：由 wenrongxx 整理与翻译，同样以 **MIT** 授权，
+  可自由使用、修改与再分发，保留出处即可；
+- 语言文件中的 Minecraft 英文原文与官方简体中文译文：版权归 Mojang 与原译者，
+  **不在本项目的授权范围内**，本项目只对“整理、补充与修订”的部分主张版权。
+
+非 MIT 组件（详见 [NOTICE.md](NOTICE.md)）：
+
+| 组件 | 许可证 | 版权 / 来源 |
+|---|---|---|
+| OpenJDK 25（APK 内置） | GPLv2 + Classpath Exception | OpenJDK / AngelAuraMC，见 [third_party/jre25/](third_party/jre25/) |
+| Noto Sans SC、Geist 字体 | SIL OFL 1.1 | Adobe / Google / The Geist Project，见 [fonts/OFL.txt](fonts/OFL.txt) |
+| Minecraft 游戏资源（jar、assets、官方贴图） | 不随本项目分发 | Mojang |
+
+本项目是非官方社区汉化，与 Mojang、Microsoft、Starling 及 Horizon 项目**没有隶属关系**；
+“Minecraft” 是 Mojang 的商标。
 
 ## 致谢
 

@@ -2,6 +2,18 @@
 
 本仓库与 Release 只分发汉化层和我们自己构建的 APK，**不含 Minecraft 游戏本体资源**。
 
+## 许可证总览
+
+| 组件 / 内容 | 许可证 | 版权 / 来源 |
+|---|---|---|
+| 上游 Starling / Horizon 代码（`lib*.so`、`prepare-kit.zip`、`StarlingVisuals.zip`） | MIT | Ludovic Marie 与 Horizon 贡献者 |
+| 简体中文汉化层（`i18n/`、语言文件、文档） | MIT | wenrongxx |
+| OpenJDK 25（APK 内置） | GPLv2 + Classpath Exception | OpenJDK / AngelAuraMC，见 `third_party/jre25/` |
+| Noto Sans SC / Geist 字体 | SIL OFL 1.1 | Adobe / Google / The Geist Project，见 `fonts/OFL.txt` |
+| Minecraft 游戏资源与官方译文 | 不随本项目分发；版权归 Mojang | Mojang |
+
+整体许可见 [LICENSE](LICENSE)（MIT）。
+
 ## APK 里有什么
 
 - `lib/arm64-v8a/lib*.so`：上游 MIT 代码的本地化构建；
@@ -40,8 +52,9 @@
 ## 语言文件
 
 `i18n/zh_cn.json` 与 `packaging/minecraft-zh_cn.json` 以 Minecraft 的英文原文为键，
-在官方简体中文译文基础上整理、补充与机器翻译修订，仅供学习交流；
-原文与官方译文版权归 Mojang 与原译者所有。
+在官方简体中文译文基础上整理、补充与机器翻译修订。
+本项目对“整理、补充与修订”的部分以 **MIT** 授权；
+其中的 Minecraft 英文原文与官方简体中文译文版权归 Mojang 与原译者，不在本项目授权范围内。
 
 ## 非官方
 
