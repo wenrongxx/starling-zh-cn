@@ -1,0 +1,6 @@
+﻿# no build artifacts
+*.apk
+*.so
+*.zip
+*.tar.xz
+*.log

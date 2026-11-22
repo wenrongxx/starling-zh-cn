@@ -1,0 +1,16 @@
+{
+  "pack": {
+    "pack_format": 97,
+    "description": "Starling's low-budget skin"
+  },
+  "language": {
+    "zh_cn": {
+      "name": "简体中文",
+      "region": "CN"
+    },
+    "en_us": {
+      "name": "English",
+      "region": "US"
+    }
+  }
+}
