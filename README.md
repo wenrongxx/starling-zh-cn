@@ -36,6 +36,7 @@ docs/HANDOVER.md             构建、装机、调试的完整说明
 docs/ENGINEERING_LOG.md      每轮改了什么、怎么验证、遗留问题
 docs/HANDOVER_PROMPT.md      继续这个项目时的速查
 docs/LOGIN.md                微软正版登录的排查与修复思路
+third_party/jre25/          OpenJDK 25 的许可证与来源说明（APK 内也随附）
 NOTICE.md                    发行合规说明（不含 Mojang 资源、字体许可、语言文件来源）
 CHANGELOG.md                 版本记录
 fonts/OFL.txt                Noto Sans SC / Geist 的 SIL OFL 1.1 许可证

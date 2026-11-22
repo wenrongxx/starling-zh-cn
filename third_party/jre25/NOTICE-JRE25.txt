@@ -1,0 +1,22 @@
+OpenJDK 25 —— 随本 APK 分发的 Java 运行时
+
+文件：assets/jre25-android-arm64.tar.xz
+SHA-256：d3eb7afe2240c26728a1bb440502c5f18ac3883e932d202dd7f0c9bcbbce4c37
+
+来源（未做任何修改，原样重新分发）：
+  AngelAuraMC 的 Android 构建，release "download_jre25"
+  https://github.com/AngelAuraMC/angelauramc-openjdk-build/releases/tag/download_jre25
+
+许可证：GNU General Public License version 2，附 Classpath Exception。
+  全文见本目录：
+    GPLv2.txt
+    CLASS-PATH-EXCEPTION.txt
+    ADDITIONAL_LICENSE_INFO.txt
+  归档内每个模块的 legal/ 目录也带有同样的许可证文件（legal/java.base/ 等）。
+
+对应源码：
+  OpenJDK：https://github.com/openjdk/jdk
+  上述发行方的构建脚本与补丁：https://github.com/AngelAuraMC/angelauramc-openjdk-build
+  如需要其它形式的源码副本，可在 https://github.com/wenrongxx/starling-zh-cn/issues 提出。
+
+用途：只在“在本机准备游戏文件”时解包运行，准备完成后由应用删除。

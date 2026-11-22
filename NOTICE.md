@@ -1,11 +1,13 @@
 # 关于本发行版（与上游的差异、合规说明）
 
-本仓库与 Release **只分发汉化层和我们自己构建的 APK**，不含 Minecraft 游戏本体资源。
+本仓库与 Release 只分发汉化层和我们自己构建的 APK，**不含 Minecraft 游戏本体资源**。
 
 ## APK 里有什么
 
 - `lib/arm64-v8a/lib*.so`：上游 MIT 代码的本地化构建；
 - `assets/lowbudget.zip`：本项目自己的皮肤包 + 合并字体 + 字体许可证；
+- `assets/jre25-android-arm64.tar.xz`：OpenJDK 25（Android arm64 构建），**原样分发**，
+  附 GPLv2 + Classpath Exception 许可证（见 `third_party/jre25/` 与 APK 内 `assets/licenses/`）；
 - `assets/StarlingVisuals.zip`、`assets/prepare-kit.zip`、`classes.dex`、`res/`：上游 MIT 内容。
 
 ## APK 里特意没有的东西
@@ -13,9 +15,19 @@
 | 内容 | 原因 |
 |---|---|
 | Mojang 的游戏资源（`bedrock-controls.zip`、游戏 jar/assets、官方贴图） | Minecraft EULA 不允许再分发；首次启动时由应用从 Mojang 官方地址下载 |
-| Java 运行时（OpenJDK 25，约 36 MB） | 上游也是运行时下载；应用会用内置 SHA-256 校验后运行，用完删除。OpenJDK 为 GPLv2 + Classpath Exception |
 
-v0.9.0-zh-cn.1 曾把上述两项打进 APK，已撤回；本地保留该版本仅作存档，不再分发。
+> v0.9.0-zh-cn.1 曾把 Mojang 的触控按钮贴图打进 APK，已撤回；本地保留存档，不再分发。
+
+## Java 运行时（OpenJDK 25）
+
+- 来源：AngelAuraMC 的 Android 构建，release `download_jre25`（未修改，原样重新分发）；
+- 许可：GPLv2 + Classpath Exception，全文见 `third_party/jre25/GPLv2.txt`、
+  `CLASS-PATH-EXCEPTION.txt`、`ADDITIONAL_LICENSE_INFO.txt`；
+- 对应源码：<https://github.com/openjdk/jdk>，构建脚本与补丁见
+  <https://github.com/AngelAuraMC/angelauramc-openjdk-build>；
+- 校验：应用启动时会核对 SHA-256 `d3eb7afe…ce4c37`，只用于在本机准备游戏文件，用完删除。
+
+之所以内置而不是首次运行时下载：国内网络拉取 36 MB 的运行时非常慢，内置可以让首次设置直接开始。
 
 ## 字体
 
@@ -34,4 +46,4 @@ v0.9.0-zh-cn.1 曾把上述两项打进 APK，已撤回；本地保留该版本�
 ## 非官方
 
 本项目是社区汉化，与 Mojang、Microsoft、Starling 及 Horizon 项目**没有隶属关系**。
-“Minecraft” 是 Mojang 的商标；Microsoft 账户登录使用的是公开的 OAuth 设备码流程。
+“Minecraft” 是 Mojang 的商标；Microsoft 账户登录使用公开的 OAuth 设备码流程。
