@@ -7,7 +7,15 @@
 
 ## 下载
 
-到 [Releases](../../releases) 下载 `starling-0.9.0-arm64-v8a-zh-cn-built-r13.apk`，覆盖安装即可（arm64-v8a，Android 8+）。
+**最新版：[v0.9.0-zh-cn.3](../../releases/latest)**（arm64-v8a，Android 8+）
+
+| 文件 | 大小 | SHA-256 |
+|---|---|---|
+| `starling-0.9.0-arm64-v8a-zh-cn-built-r15.apk` | 222.7 MiB | `066ee10eba043522453eeb5f45ff5103b0fb6cdf5327172ef60bb33124f6a522` |
+| `SHA256SUMS.txt` | — | 校验用（`sha256sum -c`） |
+
+- 覆盖安装即可：同签名保留数据，换签名需先卸载（存档在 `Starling` 文件夹，不受影响）。
+- Java 运行时已内置；首次启动只需联网下载游戏资源（约 1.5 GB）。
 
 ## 这个版本做了什么
 
@@ -23,6 +31,14 @@
 完整改动见 [CHANGES.md](CHANGES.md)；每轮的来龙去脉见 [docs/ENGINEERING_LOG.md](docs/ENGINEERING_LOG.md)；
 发行合规说明（不含哪些 Mojang 资源、字体许可、语言文件来源）见 [NOTICE.md](NOTICE.md)。
 正版登录的实现思路见 [docs/LOGIN.md](docs/LOGIN.md)。
+
+## 截图
+
+| 启动器 · 视频设置 | 渲染后端选择 |
+|---|---|
+| ![视频设置](screenshots/01-video-settings.webp) | ![渲染模式](screenshots/02-renderer.webp) |
+
+![诊断与日志](screenshots/03-diagnostics.webp)
 
 ## 仓库内容
 
