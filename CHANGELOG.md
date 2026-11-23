@@ -1,5 +1,13 @@
 # 版本记录
 
+## v0.9.0-zh-cn.5（当前）
+
+- 删掉 APK 里一份重复的游戏库（上游的 `libhorizon_mod_host.so`，130.9 MiB）。
+  我们的 `libhorizon_android.so` 是静态链接的完整构建，本身已包含全部符号，那份是冗余的。
+- 体积 222.8 MiB → **170.1 MiB**，功能不变。
+
+## v0.9.0-zh-cn.4（历史）
+
 ## v0.9.0-zh-cn.4（当前）
 
 - 把 **MIT 许可证全文、上游第三方声明、发行合规说明**放进 APK（`assets/licenses/`），
