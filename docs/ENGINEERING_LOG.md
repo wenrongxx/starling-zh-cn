@@ -355,3 +355,35 @@
   微软正版登录（设备码自动填入、登录后无 `invalid_request`）、切出去再回来不缺字。
 - Release 资产：`starling-0.9.0-arm64-v8a-zh-cn-built-r15.apk`
   （SHA-256 `066ee10e…f6a522`），含 Mojang 资源排除说明与 JRE/字体许可证。
+
+
+---
+
+## R18 · 2026-11-23（字体子集 + 体积优化）
+
+- 字体子集：保留 GB2312 全部（6763 汉字 + 符号）+ 本项目所有文案字符 + ASCII/标点，
+  `pyftsubset` 处理 `crates/horizon-theme/fonts/Geist-*.ttf`（13 MB → 4.1 MB × 4）
+  与皮肤包 `zh.ttf`（9.3 MB → 2.0 MB）。
+- 因字体是 `include_bytes!` 编进游戏库的，需要重新构建 `libhorizon_android.so`；
+  重新构建 + strip 后库从 180.6 MiB 降到 129.7 MiB。
+- 顺带删掉包里冗余的 `libhorizon_mod_host.so`（R17），APK 总体积
+  222.8 MiB → 170.1 MiB（R17）→ **136.1 MiB**（R18）。
+- 副作用：GB2312 之外的生僻字（聊天/服务器消息）会显示方框。
+
+
+---
+
+## R19 · 2026-11-23（移动数据启动黑屏）
+
+- 现象：手机流量下启动黑屏，WiFi 正常。
+- 诊断（用户诊断包）：`current-session.json` 卡在 `phase: native_start`，
+  `latest.log` 只有前 3 行（`Open file limit raised` 之后没有任何日志）；
+  同机 WiFi 的成功日志里，紧接着那行是
+  `Original Android control textures: ... Connection reset by peer (os error 104)`。
+- 根因：`game.rs` 在**创建窗口之前、主线程上**同步调用
+  `android_control_assets::fetch()` 下载 21 个可选贴图（`raw.githubusercontent.com`，
+  连接超时 30 s / 读取 60 s）。WiFi 下连接被立刻 RST → 秒失败继续；
+  移动数据下静默丢包 → 主线程一直等，界面永远画不出来。
+- 修复：把该 fetch 移到后台线程（与 `bedrock_touch` 同样的做法），
+  超时改为 3 s / 5 s。
+- 产物：r19（136.1 MiB），Release `v0.9.0-zh-cn.7`。
