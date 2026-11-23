@@ -7,15 +7,15 @@
 
 ## 下载
 
-**最新版：[v0.9.0-zh-cn.7](../../releases/latest)**（arm64-v8a，Android 8+）
+**最新版：[v0.9.0-zh-cn.8](../../releases/latest)**（arm64-v8a，Android 8+）
 
 | 文件 | 大小 | SHA-256 |
 |---|---|---|
-| `starling-0.9.0-arm64-v8a-zh-cn-built-r19.apk` | 136.1 MiB | `68de4bf5edd37d8affb4e35dc66fd3a1ba4ce7921ef30f6a1b9827cccf0991bd` |
+| `starling-0.9.0-arm64-v8a-zh-cn-built-r22.apk` | 136.1 MiB | `f56f9dc3bc2176b74fd05f7e6227d8a7ec7d81344f4582a856a77cf7a00e1feb` |
 | `SHA256SUMS.txt` | — | 校验用（`sha256sum -c`） |
 
 - 覆盖安装即可：同签名保留数据，换签名需先卸载（存档在 `Starling` 文件夹，不受影响）。
-- Java 运行时已内置；首次启动只需联网下载游戏资源（约 1.5 GB）。
+- Java 运行时已内置；首次启动会下载游戏文件（约 670 MB），默认自动测速选择更快的下载源。
 - APK 内 `assets/licenses/` 随附 MIT 许可证全文、第三方声明与合规说明。
 
 ## 这个版本做了什么
