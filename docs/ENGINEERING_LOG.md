@@ -125,7 +125,7 @@
 ### 仍未解决
 
 - 在模拟器里输入代码后，微软回「该代码无法工作」。用 **Windows 上 curl 申请的新代码**在模拟器浏览器
-  里提交也是同样结果 → 说明不是 App 的代码解析问题，而是**模拟器浏览器/网络环境**（走 <本地代理地址> 的
+  里提交也是同样结果 → 说明不是 App 的代码解析问题，而是**模拟器浏览器/网络环境**（走 <本地代理> 的
   MITM 代理）导致校验失败，或微软侧会话不匹配。**需在真机正常网络复测**；若真机同样失败，则检查
   Azure 应用注册（个人账户 + 公共客户端流 + Mojang 批准）。
 
@@ -409,3 +409,18 @@
 - 修：测速用独立 agent，3 s 连接 / 6 s 读取 / 8 s 总超时；检查页在测速期间显示
   「正在测速选择下载源…」。产物 r23，Release `v0.9.0-zh-cn.9`。
 - 可选后续：用 `FILES_DONE` 标记跳过重复校验（检查 ~30 s → 1–2 s，代价是不再发现外部改坏的文件）。
+
+
+---
+
+## 推送故障 · 2026-11-23 深夜
+
+- 现象：`git push` / `git ls-remote` 对 `github.com` 一直返回 **503 / 504**，但浏览器能打开 GitHub，
+  且 `gh api`（api.github.com）正常。
+- 原因：本机 DNS 把 `github.com` 解析到了内网代理地址；该地址不代理 git 的 smart-HTTP 请求，
+  于是所有 git 操作都 5xx。`api.github.com` 解析正常，所以 `gh` 可用。
+- 解决：给仓库固定真实 IP，绕过这条 DNS 记录（本地配置，不提交）：
+
+      git config http.curloptResolve github.com:443:<GitHub 的真实 IP>
+
+- 应急：用 GitHub API 逐文件提交（`gh api …/git/blobs|trees|commits|refs`，见 `_work/api_commit*.py`）。
