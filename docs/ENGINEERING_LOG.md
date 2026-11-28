@@ -450,3 +450,12 @@
   + `Style::color(GREEN)` + hover「点击复制地址」），并在开房间时**自动复制到剪贴板**
   （`SystemClipboard::set_text`）。
 - 模拟器上仍无法驱动"-对局域网开放"的确认弹窗（adb 合成点击无效），该项由用户在真机验证。
+
+
+---
+
+## R27 · 2026-11-28（IPv6 提示的细节）
+
+- 前缀「IPv6 直连：」白色、地址绿色（`Text::append` 两段，地址那段落 `ClickEvent::CopyToClipboard`）。
+- 多个全球 IPv6 全部列出并编号（`global_ipv6s_from` 按发现顺序去重），自动复制只放第一条；
+  逻辑用独立小程序验证（3 个全球地址 + 重复 + fe80/fec0/fd00/::1 → ALL PASS）。
