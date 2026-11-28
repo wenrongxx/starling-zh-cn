@@ -5,6 +5,8 @@
 >
 > 基于上游 MIT 许可二次分发；与 Mojang / Microsoft 无关。
 
+官网：https://starling.wenrongxx.top/
+
 ## 下载
 
 **最新版：[v0.9.0-zh-cn.9](../../releases/latest)**（arm64-v8a，Android 8+）
