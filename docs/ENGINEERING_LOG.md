@@ -424,3 +424,15 @@
       git config http.curloptResolve github.com:443:<GitHub 的真实 IP>
 
 - 应急：用 GitHub API 逐文件提交（`gh api …/git/blobs|trees|commits|refs`，见 `_work/api_commit*.py`）。
+
+
+---
+
+## R24 · 2026-11-28（开房间支持 IPv6）
+
+- 以前 `Lan::bind` 默认绑 `0.0.0.0`，朋友用公网 IPv6 连不进来。
+- 改：默认绑 `[::]` + `IPV6_V6ONLY=0`（socket2），一个端口同时接 v4/v6；失败回退 v4。
+  `available_port` 也用同一双栈 socket 探端口；accept 时把 `::ffff:a.b.c.d` 归一成 v4。
+- 验证：Mac 上独立小程序实测 `[::]:port` 同时接受 `127.0.0.1` 与 `[::1]`；
+  客户端连服务器本来就支持 IPv6（`parse_address` 支持 `[v6]:port`，`to_socket_addrs` 双栈）。
+- 产物 r24（136.2 MiB），Release `v0.9.0-zh-cn.10`。

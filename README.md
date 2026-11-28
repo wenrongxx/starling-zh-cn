@@ -9,11 +9,11 @@
 
 ## 下载
 
-**最新版：[v0.9.0-zh-cn.9](../../releases/latest)**（arm64-v8a，Android 8+）
+**最新版：[v0.9.0-zh-cn.10](../../releases/latest)**（arm64-v8a，Android 8+）
 
 | 文件 | 大小 | SHA-256 |
 |---|---|---|
-| `starling-0.9.0-arm64-v8a-zh-cn-built-r23.apk` | 136.1 MiB | `89352a51e20fb58c0f29dd684c3923e1bbcf9c2ea03959964b7c8aa9e623b586` |
+| `starling-0.9.0-arm64-v8a-zh-cn-built-r24.apk` | 136.2 MiB | `5c4dc62cfb05892ac4a6f78a568cd1048bbe2afe2c58fe48e396a84bad716fa1` |
 | `SHA256SUMS.txt` | — | 校验用（`sha256sum -c`） |
 
 - 覆盖安装即可：同签名保留数据，换签名需先卸载（存档在 `Starling` 文件夹，不受影响）。
