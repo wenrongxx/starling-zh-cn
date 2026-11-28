@@ -436,3 +436,5 @@
 - 验证：Mac 上独立小程序实测 `[::]:port` 同时接受 `127.0.0.1` 与 `[::1]`；
   客户端连服务器本来就支持 IPv6（`parse_address` 支持 `[v6]:port`，`to_socket_addrs` 双栈）。
 - 产物 r24（136.2 MiB），Release `v0.9.0-zh-cn.10`。
+
+- 补充：若双方 WiFi 都没有 IPv6，可改用手机流量（运营商一般会下发 IPv6）。
